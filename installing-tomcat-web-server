@@ -11,7 +11,7 @@ tar -zxvf apache-tomcat-9.0.108.tar.gz
 
 # Add manager-gui role to tomcat-users.xml
 sed -i '56 a\<role rolename="manager-gui"/>' apache-tomcat-9.0.108/conf/tomcat-users.xml
-sed -i '57 a\<user username="admin" password="admin" roles="manager-gui"/>' apache-tomcat-9.0.108/conf/tomcat-users.xml
+sed -i '57 a\<user username="tomcat" password="admin@123" roles="manager-gui"/>' apache-tomcat-9.0.108/conf/tomcat-users.xml
 
 # Allow access to manager GUI from all IPs
 sed -i 's/<Valve.*RemoteAddr.*\/>//' apache-tomcat-9.0.108/webapps/manager/META-INF/context.xml
